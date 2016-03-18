@@ -1,0 +1,12 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "got-leaderboard",
+  "description": "Game of Thrones Death Pool Leaderboard",
+  "repository": "https://github.com/sethpuckett/got-leaderboard",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.6.1",
+    "angular": "^1.5.1"
+  }
+}
