@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" ng-app="gotLeaderboardApp">
+<head>
+  <meta charset="utf-8">
+  <title>Game of Thrones Death Pool Leaderboard</title>
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="app/bundle.js"></script>
+</head>
+<body ng-controller="HomeCtrl">
+
+  <ul>
+    <li ng-repeat="character in characters">
+      <span>{{character.name}}</span>
+    </li>
+  </ul>
+
+</body>
+</html>

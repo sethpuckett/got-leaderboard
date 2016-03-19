@@ -41,3 +41,6 @@ node_modules
 
 # IDE directories #
 .idea
+
+# Browserify Output #
+app/bundle.js
