@@ -1,6 +1,7 @@
 require('angular');
+require('angular-resource');
 
-angular.module('gotLeaderboardApp', []);
+angular.module('gotLeaderboardApp', ['ngResource']);
 
-require('./components/home/homeService');
-require('./components/home/homeController');
+require('./services/characterService');
+require('./character/characterController');

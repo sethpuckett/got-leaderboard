@@ -6,13 +6,11 @@
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="app/bundle.js"></script>
 </head>
-<body ng-controller="HomeCtrl">
-
-  <ul>
-    <li ng-repeat="character in characters">
-      <span>{{character.name}}</span>
-    </li>
-  </ul>
-
+<body ng-controller="characterCtrl">
+	<ul>
+		<li ng-repeat="character in characters">
+		  	<span>{{character.name}}</span>
+		</li>
+	</ul>
 </body>
 </html>
