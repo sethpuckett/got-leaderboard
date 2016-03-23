@@ -7,8 +7,12 @@
   "license": "MIT",
   "devDependencies": {
     "angular": "^1.5.1",
+    "angular-resource": "^1.5.2",
     "angular-ui-router": "^0.2.18",
-    "tabletop": "^1.4.3",
-    "angular-resource": "^1.5.2"
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-webserver": "^0.9.1",
+    "tabletop": "^1.4.3"
   }
 }
