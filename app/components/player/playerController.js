@@ -2,6 +2,5 @@ angular.module('gotLeaderboardApp').controller('PlayerController', function ($sc
 	playerService.getPlayers(function(players) {
 		$scope.players = players;
 		$scope.$apply();
-		console.log(players);
 	});
 });
