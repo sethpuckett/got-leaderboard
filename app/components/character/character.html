@@ -1,5 +1,6 @@
 <ul ng-controller="CharacterController">
-	<li ng-repeat="character in characters">
-	  	<span>{{character.Name}}</span>
+	<li ng-repeat="character in characters" class="charachter-wrapper">
+		<h1>{{character.Name}}<span ng-if="character.House">: House of {{character.House}}</span></h1>
+		<img src="{{character.ImgUrl}}" class="photo">
 	</li>
 </ul>
