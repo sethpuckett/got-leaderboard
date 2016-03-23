@@ -7,6 +7,6 @@ angular.module('gotLeaderboardApp').factory('characterService', function() {
 				key: '1dHfPewrEsLE_RkagwcSUnGom0zI8YvTImhACVVdHXMc',
             	callback: callback,
             	simpleSheet: true } );
-     }
+     	}
    }
 });

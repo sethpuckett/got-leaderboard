@@ -1,5 +1,10 @@
-<ul ng-controller="CharacterController">
-	<li ng-repeat="character in characters">
-	  	<span>{{character.Name}}</span>
-	</li>
-</ul>
+<div ng-controller="CharacterController">
+	<ul>
+		<li ng-repeat="character in characters">
+		  	<span>{{character.Name}}</span>
+		</li>
+	</ul>
+	<div ng-show="refreshing">
+		<img src="../../../assets/img/ajax-loader.gif" />
+	</div>
+</div>
