@@ -1,0 +1,31 @@
+.wrapper {
+	overflow: auto;
+}
+.photo {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: -94px;
+    z-index: 0;
+}
+.charachter-wrapper {
+	list-style: none;
+    width: 18%;
+    float: left;
+    overflow: auto;
+    box-sizing: border-box;
+    border: solid 1px;
+    margin: 5px;
+    max-height: 250px;
+    max-width: 200px;
+}
+h1 {
+	display: inline-block;
+    float: left;
+    font-size: 20px;
+    color: #333333;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(225,225,225,.7);
+    padding: .5em 0;
+}
