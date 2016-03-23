@@ -2,6 +2,5 @@ angular.module('gotLeaderboardApp').controller('CharacterController', function (
 	characterService.getCharacters(function(chars) {
 		$scope.characters = chars;
 		$scope.$apply();
-		console.log(chars);
 	});
 });
