@@ -8,6 +8,7 @@
   "devDependencies": {
     "http-server": "^0.6.1",
     "angular": "^1.5.1",
-    "angular-new-router": "^0.5.3"
+    "angular-ui-router": "^0.2.18",
+    "tabletop": "^1.4.3"
   }
 }

@@ -1,9 +1,12 @@
-angular.module('gotLeaderboardApp').factory('characterService', function($resource) {
+var Tabletop = require('tabletop');
+
+angular.module('gotLeaderboardApp').factory('characterService', function() {
 	return {
 		getCharacters: function(callback) {
-			var characters = $resource("http://localhost:2403/characters", {}, {
-      			get: {method: 'GET', isArray: true}});
-			returncharacters.get({}, callback);
+			Tabletop.init( { 
+				key: '1dHfPewrEsLE_RkagwcSUnGom0zI8YvTImhACVVdHXMc',
+            	callback: callback,
+            	simpleSheet: true } );
      }
    }
 });

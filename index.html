@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="app/bundle.js"></script>
 </head>
-<body ng-app="gotLeaderboardApp" ng-controller="AppController">
-	<div ng-viewport="char"></div>
+<body ng-app="gotLeaderboardApp">
+	<ng-include src="'app/components/character/character.html'"></ng-include>
+	<ng-include src="'app/components/player/player.html'"></ng-include>
 </body>
 </html>

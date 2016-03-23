@@ -1,7 +1,5 @@
-<script type="text/ng-template">
-	<ul>
-		<li ng-repeat="character in characters">
-		  	<span>{{character.name}}</span>
-		</li>
-	</ul>
-</script>
+<ul ng-controller="CharacterController">
+	<li ng-repeat="character in characters">
+	  	<span>{{character.Name}}</span>
+	</li>
+</ul>
