@@ -9,13 +9,13 @@ angular.module('gotLeaderboardApp').controller('CharacterController', function (
 
 	var refreshCharacters = function() {
 		showRefresh();
-		characterService.getCharacters(function(chars) {
+		characterService.getCharacters(true).then(function (chars) {
 			$timeout(function() { $scope.characters = chars; });
 
 			$timeout(hideRefresh, 1000);
 		});
 
-		$timeout(refreshCharacters, 10000);
+		$timeout(refreshCharacters, 3000);
 	};
 
 	refreshCharacters();
