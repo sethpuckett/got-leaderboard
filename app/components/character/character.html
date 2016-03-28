@@ -1,8 +1,8 @@
 <div ng-controller="CharacterController">
 	<ul>
 		<li ng-repeat="character in characters" class="character-wrapper">
-			<h1>{{character.Name}}<span ng-if="character.House">: House of {{character.House}}</span></h1>
-			<img src="{{character.ImgUrl}}" class="photo">
+			<h1>{{character.Name}}<br/><span ng-if="character.House">House of {{character.House}}</span></h1>
+			<img src="{{character.ImgUrl}}" class="photo" ng-class="character.Alive === 'TRUE' ? 'character-alive' : 'character-dead'">
 		</li>
 	</ul>
 	<div ng-show="refreshing">

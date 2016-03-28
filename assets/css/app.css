@@ -2,10 +2,9 @@
 	overflow: auto;
 }
 .photo {
-    display: block;
-    margin: 0 auto;
+    max-width: 100%;
+    max-height: auto;
     position: relative;
-    top: -94px;
     z-index: 0;
 }
 .character-wrapper {
@@ -16,17 +15,29 @@
     box-sizing: border-box;
     border: solid 1px;
     margin: 5px;
-    max-height: 250px;
-    max-width: 200px;
+    height: 175px;
+    width: 140px;
     overflow: hidden;
+    position: relative;
+    background-size: 100%;
+
+}
+.character-alive {
+
+}
+.character-dead {
+    filter: blur(2px) grayscale(90%);
+    -webkit-filter: blur(2px) grayscale(90%);
 }
 h1 {
 	display: inline-block;
     float: left;
-    font-size: 20px;
+    font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-size: 11px;
     color: #333333;
-    position: relative;
+    position: absolute;
+    bottom: 0;
     z-index: 1;
     background-color: rgba(225,225,225,.7);
-    padding: .5em 0;
+    padding: .5em .2em;
 }
