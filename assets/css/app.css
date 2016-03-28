@@ -13,7 +13,9 @@
     float: left;
     overflow: auto;
     box-sizing: border-box;
-    border: solid 1px;
+    border: solid 4px;
+    border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
+    -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
     margin: 5px;
     height: 175px;
     width: 140px;
