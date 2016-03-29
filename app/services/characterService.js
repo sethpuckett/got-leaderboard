@@ -1,4 +1,5 @@
 var Tabletop = require('tabletop');
+var _ = require('underscore');
 
 angular.module('gotLeaderboardApp').factory('characterService', function($q) {
 	var thisService = this;
@@ -19,7 +20,20 @@ angular.module('gotLeaderboardApp').factory('characterService', function($q) {
 		});
     };
 
+    thisService.getCharacterVotes = function (characterName, votesArray) {
+    	return $q(function (resolve, reject) {
+    		var count = 0;
+			angular.forEach(votesArray, function (votes) {
+				if (_.find(votes, function (vote) { return vote === characterName }) !== undefined) {
+					count++;
+				}
+			});
+			resolve(count);
+    	});
+    };
+
 	return {
-		getCharacters: thisService.getCharacters
+		getCharacters: thisService.getCharacters,
+		getCharacterVotes: thisService.getCharacterVotes
 	}
 });

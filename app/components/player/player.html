@@ -1,11 +1,18 @@
 <ul ng-controller="PlayerController">
-	<li ng-repeat="player in players | orderBy:'-Score'" class="character-wrapper">
-	  	<h1>{{player.Name}}: {{player.Score}}</h1>
-	  	<img src="{{player.ImgURL}}" class="photo">
-	  	<ul>
-		  	<li ng-repeat="vote in player.VoteList">
-		  		{{vote}}
-		  	</li>
-		</ul>
+	<li ng-repeat="player in players | orderBy:'-Score'" >
+		<div class="player-container">
+			<div class="player">
+			  	<h1>{{player.Name}}: {{player.Score}}</h1>
+			  	<img src="{{player.ImgURL}}" class="photo">
+			</div>
+			<div>
+				<strong>Votes</strong>:
+			  	<ul>
+				  	<li ng-repeat="vote in player.VoteList">
+				  		{{vote}}
+				  	</li>
+				</ul>
+			</div>
+		</div>
 	</li>
 </ul>

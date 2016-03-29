@@ -50,13 +50,12 @@ angular.module('gotLeaderboardApp').factory('playerService', function ($q, chara
     thisService.getPlayerVotes = function(playerName) {
         return $q(function (resolve, reject) {
             thisService.getPlayers().then(function (players) {
-                var player = _.find(thisService.players, function(p) { return p.Name == playerName; });
+                var player = _.find(players, function(p) { return p.Name == playerName; });
                 var votes = player.Votes.split(';');
                 votes = votes.map(function(v) { return v.trim() });
                 resolve(votes);
             });
         });
-
     };
 
     return {

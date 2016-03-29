@@ -8,8 +8,26 @@
     z-index: 0;
 }
 .character-wrapper {
-	list-style: none;
-    width: 18%;
+    list-style: none;
+    float: left;
+    overflow: auto;
+    box-sizing: border-box;
+    border: solid 4px;
+    border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
+    -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
+    margin: 5px;
+    height: 175px;
+    width: 140px;
+    overflow: hidden;
+    position: relative;
+    background-size: 100%;
+
+}
+.player-container {
+    clear: both;
+}
+.player {
+    list-style: none;
     float: left;
     overflow: auto;
     box-sizing: border-box;
@@ -30,6 +48,10 @@
 .character-dead {
     filter: blur(2px) grayscale(90%);
     -webkit-filter: blur(2px) grayscale(90%);
+}
+.dead-label {
+    color: #cc0000;
+    font-weight: bold;
 }
 h1 {
 	display: inline-block;
