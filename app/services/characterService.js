@@ -24,7 +24,7 @@ angular.module('gotLeaderboardApp').factory('characterService', function($q) {
     	return $q(function (resolve, reject) {
     		var count = 0;
 			angular.forEach(votesArray, function (votes) {
-				if (_.find(votes, function (vote) { return vote === characterName }) !== undefined) {
+				if (_.find(votes, function (vote) { return vote.Name === characterName }) !== undefined) {
 					count++;
 				}
 			});
@@ -32,8 +32,18 @@ angular.module('gotLeaderboardApp').factory('characterService', function($q) {
     	});
     };
 
+    thisService.isAlive = function (characterName) {
+    	return $q(function (resolve, reject) {
+    		thisService.getCharacters().then(function (characters) {
+				var character = _.find(characters, function (character) { return character.Name === characterName });
+				resolve(character.Alive === "TRUE");
+    		});
+    	});
+    }
+
 	return {
 		getCharacters: thisService.getCharacters,
-		getCharacterVotes: thisService.getCharacterVotes
+		getCharacterVotes: thisService.getCharacterVotes,
+		isAlive: thisService.isAlive
 	}
 });

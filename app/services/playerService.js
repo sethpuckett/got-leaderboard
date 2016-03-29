@@ -29,7 +29,7 @@ angular.module('gotLeaderboardApp').factory('playerService', function ($q, chara
 
                     angular.forEach(characters, function (character) {
                         var votedFor = _.find(voteList, function(vote) {
-                            return vote == character.Name;
+                            return vote.Name === character.Name;
                         }) != undefined;
 
                         var alive = character.Alive.toUpperCase() === "TRUE";
@@ -51,9 +51,20 @@ angular.module('gotLeaderboardApp').factory('playerService', function ($q, chara
         return $q(function (resolve, reject) {
             thisService.getPlayers().then(function (players) {
                 var player = _.find(players, function(p) { return p.Name == playerName; });
-                var votes = player.Votes.split(';');
-                votes = votes.map(function(v) { return v.trim() });
-                resolve(votes);
+                var voteNames = player.Votes.split(';');
+                voteNames = voteNames.map(function(v) { return v.trim() });
+
+                var votes = [];
+                var votePromises = [];
+                angular.forEach(voteNames, function (voteName) {
+                    votePromises.push(characterService.isAlive(voteName));
+                });
+                $q.all(votePromises).then(function (voteResponses) {
+                    angular.forEach(voteNames, function (voteName, index) {
+                        votes.push({ Name: voteName, Alive: voteResponses[index] });
+                    });
+                    resolve(votes);
+                });
             });
         });
     };

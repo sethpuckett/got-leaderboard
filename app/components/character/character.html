@@ -1,6 +1,6 @@
 <div ng-controller="CharacterController">
 	<ul>
-		<li ng-repeat="character in characters" class="character-wrapper">
+		<li ng-repeat="character in characters" class="character character-wrapper">
 			<h1>
 				<div>{{character.Name}}</div>
 				<div ng-if="character.VoteCount > 0">{{character.VoteCount}} Vote<span ng-if="character.VoteCount !== 1">s</span></div>

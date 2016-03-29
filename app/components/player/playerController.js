@@ -1,4 +1,4 @@
-angular.module('gotLeaderboardApp').controller('PlayerController', function ($scope, $timeout, playerService) {
+angular.module('gotLeaderboardApp').controller('PlayerController', function ($scope, $timeout, playerService, characterService) {
 	var refreshScores = function() {
 		playerService.getPlayers().then(function(players) {
 			$scope.players = players;

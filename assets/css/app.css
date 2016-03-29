@@ -12,7 +12,7 @@
     float: left;
     overflow: auto;
     box-sizing: border-box;
-    border: solid 4px;
+    border: solid 5px;
     border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
     -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
     margin: 5px;
@@ -31,16 +31,15 @@
     float: left;
     overflow: auto;
     box-sizing: border-box;
-    border: solid 4px;
+    border: solid 5px;
     border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
     -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
     margin: 5px;
-    height: 175px;
+    height: 140px;
     width: 140px;
     overflow: hidden;
     position: relative;
     background-size: 100%;
-
 }
 .character-alive {
 
@@ -53,8 +52,14 @@
     color: #cc0000;
     font-weight: bold;
 }
-h1 {
-	display: inline-block;
+.good-vote-label {
+    color: #cc0000;
+    font-weight: bold;
+    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #cc0000;
+}
+
+.character h1 {
+    display: inline-block;
     float: left;
     font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
     font-size: 11px;
@@ -64,4 +69,16 @@ h1 {
     z-index: 1;
     background-color: rgba(225,225,225,.7);
     padding: .5em .2em;
+}
+
+.player h1 {
+    display: inline-block;
+    float: left;
+    font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-size: 18px;
+    color: #333333;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(225,225,225,.7);
 }
