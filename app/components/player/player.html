@@ -1,8 +1,8 @@
 <ul ng-controller="PlayerController">
 	<li ng-repeat="player in players | orderBy:'-Score'" >
-		<div class="player-container">
+		<div class="player-list-item">
 			<div class="player">
-			  	<h1>{{player.Name}}: <strong>{{player.Score}}</strong></h1>
+			  	<h1>{{player.Name}}: {{player.Score}}</h1>
 			  	<img src="{{player.ImgURL}}" class="photo">
 			</div>
 			<div>

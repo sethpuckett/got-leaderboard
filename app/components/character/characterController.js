@@ -1,6 +1,4 @@
 angular.module('gotLeaderboardApp').controller('CharacterController', function ($scope, $timeout, $q, characterService, playerService) {
-	var votesSet = false;
-
 	var showRefresh = function() {
 		$timeout(function() { $scope.refreshing = true; });
 	}
@@ -30,11 +28,7 @@ angular.module('gotLeaderboardApp').controller('CharacterController', function (
 		characterService.getCharacters(true).then(function (chars) {
 			$timeout(function() { 
 				$scope.characters = chars; 
-
-				if (!votesSet) {
-					setCharacterVotes();
-					votesSet = true;
-				}
+				setCharacterVotes();
 			});
 
 			$timeout(hideRefresh, 1000);

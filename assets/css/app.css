@@ -16,18 +16,18 @@
     border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
     -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
     margin: 5px;
-    height: 175px;
-    width: 140px;
+    height: 150px;
+    width: 120px;
     overflow: hidden;
     position: relative;
     background-size: 100%;
 
 }
-.player-container {
+.player-list-item {
+    list-style: none;
     clear: both;
 }
 .player {
-    list-style: none;
     float: left;
     overflow: auto;
     box-sizing: border-box;
@@ -35,8 +35,8 @@
     border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
     -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
     margin: 5px;
-    height: 140px;
-    width: 140px;
+    height: 120px;
+    width: 120px;
     overflow: hidden;
     position: relative;
     background-size: 100%;
