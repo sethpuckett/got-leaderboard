@@ -2,7 +2,7 @@
 <h1>Characters</h1>
 	<ul>
 		<li ng-repeat="character in characters" class="character character-wrapper">
-		<img src="{{character.Sigil}}" class="sigil">
+		<img ng-if="character.Sigil" src="{{character.Sigil}}" class="sigil">
 			<h1>
 				<div>{{character.Name}}</div>
 				<div ng-if="character.VoteCount > 0">{{character.VoteCount}} Vote<span ng-if="character.VoteCount !== 1">s</span></div>
