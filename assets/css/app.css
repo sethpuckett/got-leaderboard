@@ -14,6 +14,9 @@ body {
     float: left;
     width: 35%;
 }
+.logo {
+    width: 100%;
+}
 h1 {
     color: #EAEAEA;
 }
@@ -136,13 +139,17 @@ ul {
 /*MEDIA QUERIES*/
 
 @media (max-width: 600px) {
-.wrapper.characters {
-    float: none;
-    width: 100%;
-}
-.wrapper.players {
-    float: none;
-    width: 100%;
-}
+    body {
+        background-size: inherit;
+        background-repeat: repeat;
+    }
+    .wrapper.characters {
+        float: none;
+        width: 100%;
+    }
+    .wrapper.players {
+        float: none;
+        width: 100%;
+    }
 }
 
