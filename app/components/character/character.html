@@ -1,12 +1,15 @@
 <div ng-controller="CharacterController">
+<h1>Characters</h1>
 	<ul>
 		<li ng-repeat="character in characters" class="character character-wrapper">
+		<img src="{{character.Sigil}}" class="sigil">
 			<h1>
 				<div>{{character.Name}}</div>
 				<div ng-if="character.VoteCount > 0">{{character.VoteCount}} Vote<span ng-if="character.VoteCount !== 1">s</span></div>
 				<div ng-if="character.Alive !== 'TRUE'" class="dead-label">DEAD</div>
 			</h1>
 			<img src="{{character.ImgUrl}}" class="photo" ng-class="character.Alive === 'TRUE' ? 'character-alive' : 'character-dead'">
+
 		</li>
 	</ul>
 	<div ng-show="refreshing">

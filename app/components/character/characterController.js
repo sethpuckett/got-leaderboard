@@ -34,7 +34,7 @@ angular.module('gotLeaderboardApp').controller('CharacterController', function (
 			$timeout(hideRefresh, 1000);
 		});
 
-		$timeout(refreshCharacters, 10000);
+		$timeout(refreshCharacters, 10000000000000000);
 	};
 
 	refreshCharacters();

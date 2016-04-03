@@ -2,9 +2,7 @@
 
 Displays alive/dead status of key characters and keeps a running score in the death pool leaderboard.
 
-# To install
-you will need node, npm, broswerify, and http-server globally installed
+## Getting started
+cd into the root folder and run 'npm install' to install the required node modules
 
-run npm install
-cd into app folder and run browserify app.js > bundle.js
-cd back to root directory and run http-server
+once installed, run 'grunt' to compile the app and start a local server
