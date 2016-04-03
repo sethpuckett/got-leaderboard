@@ -1,5 +1,32 @@
+body {
+    background-image: url(/assets/img/westeros.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
 .wrapper {
 	overflow: auto;
+}
+.wrapper.characters {
+    float: left;
+    width: 65%;
+}
+.wrapper.players {
+    float: left;
+    width: 35%;
+}
+h1 {
+    color: #EAEAEA;
+}
+
+ul {
+    padding: 0;
+}
+.sigil {
+    width: 25px;
+    float: left;
+    position: absolute;
+    z-index: 9;
+    padding: 3px;
 }
 .photo {
     max-width: 100%;
@@ -12,11 +39,12 @@
     float: left;
     overflow: auto;
     box-sizing: border-box;
-    border: solid 5px;
+    box-shadow: 5px 5px 5px black;
+    /*border: solid 5px;
     border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
-    -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
+    -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; */
     margin: 5px;
-    height: 150px;
+    height: 120px;
     width: 120px;
     overflow: hidden;
     position: relative;
@@ -26,20 +54,40 @@
 .player-list-item {
     list-style: none;
     clear: both;
+    display: table-row;
 }
 .player {
     float: left;
     overflow: auto;
+    display: table-cell;
     box-sizing: border-box;
-    border: solid 5px;
+    box-shadow: 5px 5px 5px black;
+    /*border: solid 5px;
     border-image:url("/assets/img/targaryen-border.png") 30 30 repeat;
-    -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; 
+    -webkit-border-image:url("/assets/img/targaryen-border.png") 30 30 repeat; */
     margin: 5px;
     height: 120px;
     width: 120px;
     overflow: hidden;
     position: relative;
     background-size: 100%;
+}
+.player-votes {
+    color: #EAEAEA;
+    display: table-cell;
+    vertical-align: middle;
+}
+.player-votes ul {
+    list-style: none;
+    display: inline;
+    width: 10px;
+}
+.vote-item  {
+    display: inline;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 1em;
 }
 .character-alive {
 
@@ -49,13 +97,14 @@
     -webkit-filter: blur(2px) grayscale(90%);
 }
 .dead-label {
-    color: #cc0000;
+    color: #610900;
     font-weight: bold;
 }
 .good-vote-label {
-    color: #cc0000;
+    color: #610900;
     font-weight: bold;
-    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #cc0000;
+    text-decoration: line-through;
+    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #610900;
 }
 
 .character h1 {
@@ -81,4 +130,19 @@
     bottom: 0;
     z-index: 1;
     background-color: rgba(225,225,225,.7);
+    padding: 5px;
 }
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 600px) {
+.wrapper.characters {
+    float: none;
+    width: 100%;
+}
+.wrapper.players {
+    float: none;
+    width: 100%;
+}
+}
+
