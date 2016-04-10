@@ -4,7 +4,7 @@
 		<img src="../../../assets/img/ajax-loader.gif" />
 	</div>
 	<ul ng-show="!refreshing">
-		<li ng-repeat="player in players | orderBy:'-Score'" >
+		<li ng-repeat="player in players | orderBy:'-Score'" class="player-wrapper">
 			<div class="player-list-item">
 				<div class="player">
 				  	<h1>{{player.Name}}: {{player.Score}}</h1>
