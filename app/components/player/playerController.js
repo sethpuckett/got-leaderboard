@@ -1,18 +1,25 @@
-angular.module('gotLeaderboardApp').controller('PlayerController', function ($scope, $timeout, playerService, characterService) {
+angular.module('gotLeaderboardApp').controller('PlayerController', function ($scope, $timeout, $q, playerService, characterService) {
 	var refreshScores = function() {
 		playerService.getPlayers().then(function(players) {
 			$scope.players = players;
 
+			var promises = [];
 			angular.forEach($scope.players, function(player) {
-				playerService.getPlayerVotes(player.Name).then(function (votes) {
+				var votePromise = playerService.getPlayerVotes(player.Name);
+				promises.push(votePromise);
+				votePromise.then(function (votes) {
 					player.VoteList = votes;
-					playerService.getPlayerScore(player.Name).then(function (score) {
+					var scorePromise = playerService.getPlayerScore(player.Name);
+					promises.push(scorePromise);
+					scorePromise.then(function (score) {
 						player.Score = score;
 					});
 				});
 			});
 
-			$scope.refreshing = false;
+			$q.all(promises).then(function () {
+				$scope.refreshing = false;
+			});
 
 			$timeout(function() { $scope.$apply(); });
 		});
