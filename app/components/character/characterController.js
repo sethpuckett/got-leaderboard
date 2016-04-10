@@ -1,11 +1,11 @@
 angular.module('gotLeaderboardApp').controller('CharacterController', function ($scope, $timeout, $q, characterService, playerService) {
-	var showRefresh = function() {
-		$timeout(function() { $scope.refreshing = true; });
-	}
+	// var showRefresh = function() {
+	// 	$timeout(function() { $scope.refreshing = true; });
+	// }
 
-	var hideRefresh = function() {
-		$timeout(function() { $scope.refreshing = false; });
-	};
+	// var hideRefresh = function() {
+	// 	$timeout(function() { $scope.refreshing = false; });
+	// };
 
 	var setCharacterVotes = function () {
 		var votePromises = [];
@@ -24,17 +24,17 @@ angular.module('gotLeaderboardApp').controller('CharacterController', function (
 	}
 
 	var refreshCharacters = function() {
-		showRefresh();
+		//showRefresh();
 		characterService.getCharacters(true).then(function (chars) {
 			$timeout(function() { 
 				$scope.characters = chars; 
 				setCharacterVotes();
 			});
 
-			$timeout(hideRefresh, 1000);
+			//$timeout(hideRefresh, 1000);
 		});
 
-		$timeout(refreshCharacters, 10000000000000000);
+		$timeout(refreshCharacters, 60000);
 	};
 
 	refreshCharacters();

@@ -14,7 +14,7 @@ angular.module('gotLeaderboardApp').controller('PlayerController', function ($sc
 
 			$timeout(function() { $scope.$apply(); });
 		});
-		$timeout(refreshScores, 3000000000000);
+		$timeout(refreshScores, 60000);
 	}
 
 	refreshScores();
