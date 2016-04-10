@@ -12,10 +12,13 @@ angular.module('gotLeaderboardApp').controller('PlayerController', function ($sc
 				});
 			});
 
+			$scope.refreshing = false;
+
 			$timeout(function() { $scope.$apply(); });
 		});
 		$timeout(refreshScores, 60000);
 	}
 
+	$scope.refreshing = true;
 	refreshScores();
 });

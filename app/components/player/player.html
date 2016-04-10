@@ -1,19 +1,24 @@
-<h1>Players</h1>
-<ul ng-controller="PlayerController">
-	<li ng-repeat="player in players | orderBy:'-Score'" >
-		<div class="player-list-item">
-			<div class="player">
-			  	<h1>{{player.Name}}: {{player.Score}}</h1>
-			  	<img src="{{player.ImgURL}}" class="photo">
+<div ng-controller="PlayerController">
+	<h1>Players</h1>
+	<div ng-show="refreshing" class="loading">
+		<img src="../../../assets/img/ajax-loader.gif" />
+	</div>
+	<ul ng-show="!refreshing">
+		<li ng-repeat="player in players | orderBy:'-Score'" >
+			<div class="player-list-item">
+				<div class="player">
+				  	<h1>{{player.Name}}: {{player.Score}}</h1>
+				  	<img src="{{player.ImgURL}}" class="photo">
+				</div>
+				<div class="player-votes">
+					<!-- <strong>Votes</strong>: -->
+				  	<ul>
+					  	<li class="vote-item" ng-repeat="vote in player.VoteList">
+					  		<span ng-class="{ 'good-vote-label': !vote.Alive }">{{vote.Name}}</span>
+					  	</li>
+					</ul>
+				</div>
 			</div>
-			<div class="player-votes">
-				<!-- <strong>Votes</strong>: -->
-			  	<ul>
-				  	<li class="vote-item" ng-repeat="vote in player.VoteList">
-				  		<span ng-class="{ 'good-vote-label': !vote.Alive }">{{vote.Name}}</span>
-				  	</li>
-				</ul>
-			</div>
-		</div>
-	</li>
-</ul>
+		</li>
+	</ul>
+</div>
