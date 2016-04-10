@@ -24,6 +24,9 @@ h1 {
 ul {
     padding: 0;
 }
+.clearfix {
+    overflow: auto;
+}
 .sigil {
     width: 25px;
     float: left;
@@ -142,7 +145,7 @@ ul {
 
 /*MEDIA QUERIES*/
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     body {
         background-size: inherit;
         background-repeat: repeat;
@@ -154,6 +157,21 @@ ul {
     .wrapper.players {
         float: none;
         width: 100%;
+    }
+    .vote-item {
+        width: 100%;
+    }
+    .character-wrapper{
+       /* display: block;
+        clear: both;*/
+    }
+    .player-wrapper {
+        margin-bottom: 2em;
+    }
+    ul {
+        width: 80%;
+        margin: 0 auto;
+        list-style: none;
     }
 }
 
