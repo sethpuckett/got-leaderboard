@@ -5,20 +5,20 @@
 	</div>
 	<ul ng-show="!refreshing">
 		<li ng-repeat="player in players | orderBy:'-Score'" class="player-wrapper">
-			<div class="player-list-item">
-				<div class="player">
+			<div class="player-list-item clearfix">
+				<div class="player clearfix">
 				  	<h1>{{player.Name}}: {{player.Score}}</h1>
 				  	<img src="{{player.ImgURL}}" class="photo">
-				</div>
-				<div class="player-votes">
+				</div><!-- player -->
+				<div class="player-votes clearfix">
 					<!-- <strong>Votes</strong>: -->
-				  	<ul>
+				  	<ul class="clearfix">
 					  	<li class="vote-item" ng-repeat="vote in player.VoteList">
 					  		<span ng-class="{ 'good-vote-label': !vote.Alive }">{{vote.Name}}</span>
-					  	</li>
+					  	</li><!-- vote item -->
 					</ul>
-				</div>
-			</div>
-		</li>
-	</ul>
-</div>
+				</div><!-- player votes -->
+			</div><!-- players list item -->
+		</li><!-- each player -->
+	</ul><!-- players list -->
+</div><!-- controller -->
