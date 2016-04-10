@@ -96,8 +96,12 @@ ul {
 
 }
 .character-dead {
-    filter: blur(2px) grayscale(90%);
     -webkit-filter: blur(2px) grayscale(90%);
+    -moz-filter: blur(2px) grayscale(90%);
+    -ms-filter: blur(2px) grayscale(90%);
+    -o-filter: blur(2px) grayscale(90%);
+    filter: blur(2px) grayscale(90%);
+
 }
 .dead-label {
     color: #610900;
