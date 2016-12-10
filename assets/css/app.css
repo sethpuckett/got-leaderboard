@@ -60,12 +60,13 @@ ul {
 .player-list-item {
     list-style: none;
     clear: both;
-    display: table-row;
+    margin-bottom: 1em;
+    /*display: table-row;*/
 }
 .player {
     float: left;
-    overflow: auto;
-    display: table-cell;
+    overflow: auto;/*
+    display: table-cell;*/
     box-sizing: border-box;
     box-shadow: 5px 5px 5px black;
     /*border: solid 5px;
@@ -79,9 +80,10 @@ ul {
     background-size: 100%;
 }
 .player-votes {
-    color: #EAEAEA;
-    display: table-cell;
+    color: #EAEAEA;/*
+    display: table-cell;*/
     vertical-align: middle;
+    margin-top: 1em;
 }
 .player-votes ul {
     list-style: none;
@@ -104,6 +106,7 @@ ul {
     -ms-filter: blur(2px) grayscale(90%);
     -o-filter: blur(2px) grayscale(90%);
     filter: blur(2px) grayscale(90%);
+
 }
 .dead-label {
     color: #610900;
@@ -140,9 +143,6 @@ ul {
     z-index: 1;
     background-color: rgba(225,225,225,.7);
     padding: 5px;
-}
-.loading {
-    text-align: left;
 }
 
 /*MEDIA QUERIES*/
