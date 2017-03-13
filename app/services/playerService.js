@@ -1,33 +1,32 @@
 var Tabletop = require('tabletop');
 var _ = require('underscore');
 
-angular.module('gotLeaderboardApp').factory('playerService', function ($q, characterService) {
+angular.module('gotLeaderboardApp').factory('playerService', function($q, characterService) {
     var thisService = this;
 
-    thisService.getPlayers = function() 
-    { 
+    thisService.getPlayers = function() {
         return $q(function(resolve, reject) {
             if (thisService.players != null) {
                 resolve(thisService.players);
             } else {
-                Tabletop.init( { 
+                Tabletop.init({
                     key: '1GxP0oUUJbpRrX5fFMDrr7Z-fWIJ1n40eA1ldlqnrCH0',
-                    callback: function(players) { 
-                        thisService.players = players; 
-                        resolve(players); 
-                    },
-                    simpleSheet: true } );
+                    callback: function(model) {
+                        thisService.players = model.sheets('season-06').all();
+                        resolve(thisService.players);
+                    }
+                });
             }
         });
     };
 
     thisService.getPlayerScore = function(playerName) {
-        return $q(function (resolve, reject) {
-            thisService.getPlayerVotes(playerName).then(function (voteList) {
-                characterService.getCharacters().then(function (characters) {
+        return $q(function(resolve, reject) {
+            thisService.getPlayerVotes(playerName).then(function(voteList) {
+                characterService.getCharacters().then(function(characters) {
                     var score = 0;
 
-                    angular.forEach(characters, function (character) {
+                    angular.forEach(characters, function(character) {
                         var votedFor = _.find(voteList, function(vote) {
                             return vote.Name === character.Name;
                         }) != undefined;
@@ -48,19 +47,19 @@ angular.module('gotLeaderboardApp').factory('playerService', function ($q, chara
     };
 
     thisService.getPlayerVotes = function(playerName) {
-        return $q(function (resolve, reject) {
-            thisService.getPlayers().then(function (players) {
+        return $q(function(resolve, reject) {
+            thisService.getPlayers().then(function(players) {
                 var player = _.find(players, function(p) { return p.Name == playerName; });
                 var voteNames = player.Votes.split(';');
                 voteNames = voteNames.map(function(v) { return v.trim() });
 
                 var votes = [];
                 var votePromises = [];
-                angular.forEach(voteNames, function (voteName) {
+                angular.forEach(voteNames, function(voteName) {
                     votePromises.push(characterService.isAlive(voteName));
                 });
-                $q.all(votePromises).then(function (voteResponses) {
-                    angular.forEach(voteNames, function (voteName, index) {
+                $q.all(votePromises).then(function(voteResponses) {
+                    angular.forEach(voteNames, function(voteName, index) {
                         votes.push({ Name: voteName, Alive: voteResponses[index] });
                     });
                     resolve(votes);
@@ -73,5 +72,5 @@ angular.module('gotLeaderboardApp').factory('playerService', function ($q, chara
         getPlayers: thisService.getPlayers,
         getPlayerScore: thisService.getPlayerScore,
         getPlayerVotes: thisService.getPlayerVotes
-   };
+    };
 });
