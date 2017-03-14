@@ -11,8 +11,8 @@ angular.module('gotLeaderboardApp').factory('playerService', function($q, charac
             } else {
                 Tabletop.init({
                     key: '1GxP0oUUJbpRrX5fFMDrr7Z-fWIJ1n40eA1ldlqnrCH0',
-                    callback: function(model) {
-                        thisService.players = model.sheets('season-06').all();
+                    callback: function(data, tabletop) {
+                        thisService.players = tabletop.sheets('season-06').all();
                         resolve(thisService.players);
                     }
                 });
