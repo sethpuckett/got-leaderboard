@@ -1,7 +1,7 @@
 var Tabletop = require('tabletop');
 var _ = require('underscore');
 
-angular.module('gotLeaderboardApp').factory('playerService', function($q, characterService) {
+angular.module('gotLeaderboardApp').factory('playerService', ['$q', 'playerSheet', function($q, playerSheet, characterService) {
     var thisService = this;
 
     thisService.getPlayers = function() {
@@ -12,7 +12,7 @@ angular.module('gotLeaderboardApp').factory('playerService', function($q, charac
                 Tabletop.init({
                     key: '1GxP0oUUJbpRrX5fFMDrr7Z-fWIJ1n40eA1ldlqnrCH0',
                     callback: function(data, tabletop) {
-                        thisService.players = tabletop.sheets('season-06').all();
+                        thisService.players = tabletop.sheets(playerSheet).all();
                         resolve(thisService.players);
                     }
                 });
@@ -73,4 +73,4 @@ angular.module('gotLeaderboardApp').factory('playerService', function($q, charac
         getPlayerScore: thisService.getPlayerScore,
         getPlayerVotes: thisService.getPlayerVotes
     };
-});
+}]);

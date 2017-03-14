@@ -1,7 +1,7 @@
 var Tabletop = require('tabletop');
 var _ = require('underscore');
 
-angular.module('gotLeaderboardApp').factory('characterService', function($q) {
+angular.module('gotLeaderboardApp').factory('characterService', ['$q', 'characterSheet', function($q, characterSheet) {
     var thisService = this;
 
     thisService.getCharacters = function(refresh) {
@@ -12,7 +12,7 @@ angular.module('gotLeaderboardApp').factory('characterService', function($q) {
                 Tabletop.init({
                     key: '1dHfPewrEsLE_RkagwcSUnGom0zI8YvTImhACVVdHXMc',
                     callback: function(data, tabletop) {
-                        thisService.characters = tabletop.sheets('season-06').all();
+                        thisService.characters = tabletop.sheets(characterSheet).all();
                         resolve(thisService.characters);
                     }
                 });
@@ -46,4 +46,4 @@ angular.module('gotLeaderboardApp').factory('characterService', function($q) {
         getCharacterVotes: thisService.getCharacterVotes,
         isAlive: thisService.isAlive
     }
-});
+}]);
