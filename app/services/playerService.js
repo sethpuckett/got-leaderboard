@@ -1,7 +1,7 @@
 var Tabletop = require('tabletop');
 var _ = require('underscore');
 
-angular.module('gotLeaderboardApp').factory('playerService', ['$q', 'playerSheet', function($q, playerSheet, characterService) {
+angular.module('gotLeaderboardApp').factory('playerService', ['$q', 'playerSheet', 'characterService', function($q, playerSheet, characterService) {
     var thisService = this;
 
     thisService.getPlayers = function() {
