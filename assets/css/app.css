@@ -1,5 +1,5 @@
 body {
-    background-image: url(/assets/img/westeros-map.png);
+    background-image: url(../img/westeros-map.png);
     background-size: 100% auto;
     background-repeat: repeat-y;
 }
@@ -153,6 +153,15 @@ ul {
 
 .loading {
     text-align: left;
+}
+
+.rules {
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    color: #EAEAEA;
+    font-size: large;
+    background: rgba(25, 25, 25, .33);
 }
 
 
