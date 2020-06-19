@@ -6,7 +6,7 @@
   "repository": "https://github.com/sethpuckett/got-leaderboard",
   "license": "MIT",
   "devDependencies": {
-    "angular": "^1.5.1",
+    "angular": "^1.8.0",
     "angular-resource": "^1.5.2",
     "angular-ui-router": "^0.2.18",
     "gulp": "^3.9.1",
